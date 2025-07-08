@@ -1,30 +1,30 @@
 # Beautify Your Mac Terminal: A Modern Setup Guide
 
-Tired of your boring, default macOS Terminal? This guide provides the steps and resources to set up a modern, efficient, and aesthetically pleasing terminal environment on macOS.
+Tired of your default macOS Terminal? This guide walks you through setting up a modern, efficient, and visually appealing terminal environment on macOS.
 
 ---
 
 ## Quick Setup
 
-For a complete setup, run the commands below in your terminal. If your machine has Privilege Management software (like BeyondTrust), please refer to the "Privilege Management Install" instructions for Homebrew first.
+Run the commands below in your terminal for a complete setup. If your machine uses Privilege Management software (like BeyondTrust), see the "Privilege Management Install" section for Homebrew.
 
 ---
 
 ### 1. Install Homebrew
 
-**Homebrew** is a free and open-source software package management system that simplifies the installation of software on Apple's macOS.
+**Homebrew** is a package manager that simplifies installing software on macOS.
 
 #### Standard Install
 
 ```bash
-/bin/bash -c "$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh](https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh))"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
 #### Privilege Management Install
 
-If the standard installer fails, download and run our custom script. Download homebrew-install.sh from this repository. Run the following commands:
+If the standard installer fails, use the custom script from this repository:
 
 ```bash
 chmod a+x homebrew-install.sh
@@ -32,74 +32,110 @@ chmod a+x homebrew-install.sh
 brew -v
 ```
 
-### 2. Install Tools
+---
 
-# Install iTerm2, Git
+### 2. Install Essential Tools
+
+Install iTerm2 and Git:
 
 ```bash
 brew install --cask iterm2
 brew install git
 ```
 
-# Install Oh My Zsh
+Install Oh My Zsh:
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+---
+
 ### 3. Install Powerlevel10k Theme
 
-# Clone the theme
+Clone the theme:
+
 ```bash
 git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-# Set theme in .zshrc
+Set the theme in your `.zshrc`:
 
-# Open ~/.zshrc and set: ZSH_THEME="powerlevel10k/powerlevel10k"
+1. Open `~/.zshrc` in your editor:
+    ```bash
+    vi ~/.zshrc
+    ```
+2. Set:
+    ```zsh
+    ZSH_THEME="powerlevel10k/powerlevel10k"
+    ```
+3. Save and exit.
 
-```bash
-vi ~/.zshrc
-```
-
-# On your keyboard press "i" and navigate to ZSH_THEME
-
-
-# Restart your terminal or run:
+Reload your shell:
 
 ```bash
 source ~/.zshrc
 ```
 
-Follow the Powerlevel10k configuration wizard that appears. If it doesn't start automatically, run 
+Follow the Powerlevel10k configuration wizard. If it doesn't start automatically, run:
 
 ```bash
-p10k configure.
+p10k configure
 ```
+
+---
 
 ### 4. Install Zsh Plugins
 
-# Autosuggestions
+**Autosuggestions:**
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-# Syntax Highlighting
+**Syntax Highlighting:**
 
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-# Add plugins to ~/.zshrc
-# Open ~/.zshrc and set: plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+Add plugins to your `.zshrc`:
 
-# Reload shell
+1. Open `~/.zshrc` and set:
+    ```zsh
+    plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+    ```
+2. Save and exit.
+
+Reload your shell:
 
 ```bash
 source ~/.zshrc
 ```
 
-Customization Files
-This repository contains files for easy customization.homebrew-install.sh: Custom Homebrew installer for machines with privilege management.coolnight.itermcolors: A custom color scheme for iTerm2.How to Use coolnight.itermcolorsDownload the coolnight.itermcolors file.Open iTerm2 Preferences (Cmd + ,).Go to Profiles > Colors.Click Color Presets... > Import....Select the downloaded file.Choose coolnight from the Color Presets... dropdown.(Optional) VSCode ConfigurationTo use the Powerlevel10k font in VSCode's integrated terminal, add the following to your settings.json:"terminal.integrated.fontFamily": "MesloLGS NF"
+---
 
+## Customization Files
 
+This repository includes:
+
+- `homebrew-install.sh`: Custom Homebrew installer for machines with privilege management.
+- `coolnight.itermcolors`: Custom iTerm2 color scheme.
+
+### How to Use `coolnight.itermcolors`
+
+1. Download `coolnight.itermcolors`.
+2. Open iTerm2 Preferences (`Cmd + ,`).
+3. Go to **Profiles > Colors**.
+4. Click **Color Presets... > Import...** and select the downloaded file.
+5. Choose **coolnight** from the Color Presets dropdown.
+
+---
+
+### (Optional) VSCode Configuration
+
+To use the Powerlevel10k font in VSCode's integrated terminal, add this to your `settings.json`:
+
+```json
+"terminal.integrated.fontFamily": "MesloLGS NF"
+```
