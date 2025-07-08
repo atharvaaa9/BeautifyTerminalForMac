@@ -1,6 +1,7 @@
 # Beautify Your Mac Terminal: A Modern Setup Guide
 
 Tired of your default macOS Terminal? This guide walks you through setting up a modern, efficient, and visually appealing terminal environment on macOS.
+![Modern Mac Terminal Preview](terminal.png)
 
 ---
 
