@@ -141,3 +141,5 @@ To use the Powerlevel10k font in VSCode's integrated terminal, add this to your 
 ```json
 "terminal.integrated.fontFamily": "MesloLGS NF"
 ```
+**Note for Windows Users:**  
+I put together this modern Mac Terminal setup guide for fun! Even though it's focused on macOS, feel free to check it out for inspiration or ideas. Let me know what you think!
